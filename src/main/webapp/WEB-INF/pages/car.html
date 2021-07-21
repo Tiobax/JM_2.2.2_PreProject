@@ -2,14 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Car</title>
+    <meta charset="UTF-8">
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+    <table border="1">
+        <tbody>
+            <th>Модель</th><th>Серия</th><th>Год выпуска</th>
+            <th:block th:each="msg : ${messages}">
+            <tr>
+                <td th:utext="${msg.model}"></td>
+                <td th:utext="${msg.series}"></td>
+                <td th:utext="${msg.yearOfRelease}"></td>
+            </tr>
+            </th:block>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
