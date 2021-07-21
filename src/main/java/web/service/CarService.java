@@ -17,11 +17,9 @@ public class CarService {
     }
 
     public List<Car> getCarList(Integer count) {
-        if (count == null) {
+        if (count == null || count < 1 || count > 4) {
             return carList;
-        } else if (count >= 1 && count <= 5) {
-            return carList.subList(0, count);
         }
-        return carList;
+        return carList.subList(0, count);
     }
 }
